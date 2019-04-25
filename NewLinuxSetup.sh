@@ -23,6 +23,7 @@ sudo apt install net-tools -y
 sudo apt install vim -y
 sudo apt install htop -y
 sudo apt install nfs-common -y
+hostname -I
 echo "======= END ======="
 read -p "Press Enter to continue [Create root account] next."
 
@@ -43,6 +44,7 @@ sudo mkdir -p /mnt/Install
 sudo mkdir -p /mnt/W
 sudo mkdir -p /mnt/Q
 sudo mkdir -p /mnt/P
+ls -la /mnt
 echo "======= END ======="
 
 
