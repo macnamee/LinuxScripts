@@ -11,7 +11,7 @@ read -p "Press Enter to continue [OpenSSH] next."
 /bin/echo -e "\e[1;36m echo ""
 /bin/echo -e "\e[1;36m echo ""
 /bin/echo -e "\e[1;36m echo "------- Start -------"
-/bin/echo -e "\e[1;36m sudo apt install openssh-server -y
+sudo apt install openssh-server -y
 /bin/echo -e "\e[1;36m echo "======= END ======="
 read -p "Press Enter to continue [NetTools, VIM, HTOP, NFS-Common] next."
 
