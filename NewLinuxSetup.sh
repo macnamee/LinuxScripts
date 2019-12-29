@@ -18,9 +18,6 @@ sudo apt install htop -y
 sudo apt install nfs-common -y
 echo "alias ll='ls -la'" | sudo tee -a ~/.bashrc
 
-hostname -I
-/bin/echo -e "\e[1;36m echo ======= END ======="
-
 read -p "Press Enter to continue [Create root account] next."
 /bin/echo -e "\e[1;36m echo ------- Start -------"
 sudo passwd root
@@ -43,3 +40,5 @@ ls -la /mnt
 /bin/echo -e "\e[1;36m echo ======= END ======="
 
 
+hostname -I
+/bin/echo -e "\e[1;36m echo ======= END ======="
