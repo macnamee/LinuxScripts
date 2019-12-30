@@ -345,3 +345,5 @@ echo
 /bin/echo -e "\e[1;36m ! Written by Griffon - August 2018 - Ver 0.5 - Std-Xrdp-Install-0.5.sh !\e[0m"
 /bin/echo -e "\e[1;36m !-----------------------------------------------------------------------!\e[0m"
 echo
+
+hostname -I
