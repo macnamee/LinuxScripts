@@ -30,6 +30,7 @@ if [[ $REPLY = y ]] ; then
     sudo apt install vim -y
     sudo apt install htop -y
     sudo apt install nfs-common -y
+    sudo apt install tilix -y
     echo "alias ll='ls -la'" | sudo tee -a ~/.bashrc
     echo "alias cls='clear'" | sudo tee -a ~/.bashrc
     /bin/echo -e "\e[1;36m echo ======= END ======="
@@ -47,6 +48,30 @@ if [[ $REPLY = y ]] ; then
     /bin/echo -e "\e[1;36m echo ======= END ======="
 else
     echo "Not setting up a root account."
+fi
+
+echo
+echo
+echo
+read -p "Change the sudo timeout? [y/n]" -n 1 -r
+echo
+if [[ $REPLY = y ]] ; then
+    /bin/echo -e "\e[1;36m echo ------- Start -------"
+    /bin/echo -e "\e[1;36m echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    /bin/echo -e "\e[1;36m echo !"
+    /bin/echo -e "\e[1;36m echo !"
+    /bin/echo -e "\e[1;36m echo ! In the editor add timestamp_timeout=300 to the Default env_reset line" 
+    /bin/echo -e "\e[1;36m echo ! It should look like this once completed:"
+    /bin/echo -e "\e[1;36m echo !"
+    /bin/echo -e "\e[1;36m echo !Defaults env_reset, timestamp_timeout=300"
+    /bin/echo -e "\e[1;36m echo "
+    /bin/echo -e "\e[1;36m echo "    
+    /bin/echo -e "\e[1;36m echo "    
+    /bin/echo -e "\e[1;36m echo "    
+    sudo visudo
+    /bin/echo -e "\e[1;36m echo ======= END ======="
+else
+    echo "Not changing the sudo timeout."
 fi
 
 read -p "Add HS and TS to /etc/hosts? [y/n]" -n 1 -r
