@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#001
+
 read -p "Do apt update && apt upgrade [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
