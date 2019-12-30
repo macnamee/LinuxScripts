@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#001
+#002
 
 read -p "Do apt update && apt upgrade [y/n]" -n 1 -r
 echo
