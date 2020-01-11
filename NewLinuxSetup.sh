@@ -55,21 +55,20 @@ fi
 echo
 echo
 echo
+/bin/echo -e "\e[1;36m echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+/bin/echo -e "\e[1;36m echo !"
+/bin/echo -e "\e[1;36m echo !"
+/bin/echo -e "\e[1;36m echo ! In the editor add timestamp_timeout=300 to the Default env_reset line" 
+/bin/echo -e "\e[1;36m echo ! It should look like this once completed:"
+/bin/echo -e "\e[1;36m echo !"
+/bin/echo -e "\e[1;36m echo !Defaults env_reset, timestamp_timeout=300"
+/bin/echo -e "\e[1;36m echo "
+/bin/echo -e "\e[1;36m echo "    
+/bin/echo -e "\e[1;36m echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 read -p "Change the sudo timeout? [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
     /bin/echo -e "\e[1;36m echo ------- Start -------"
-    /bin/echo -e "\e[1;36m echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-    /bin/echo -e "\e[1;36m echo !"
-    /bin/echo -e "\e[1;36m echo !"
-    /bin/echo -e "\e[1;36m echo ! In the editor add timestamp_timeout=300 to the Default env_reset line" 
-    /bin/echo -e "\e[1;36m echo ! It should look like this once completed:"
-    /bin/echo -e "\e[1;36m echo !"
-    /bin/echo -e "\e[1;36m echo !Defaults env_reset, timestamp_timeout=300"
-    /bin/echo -e "\e[1;36m echo "
-    /bin/echo -e "\e[1;36m echo "    
-    /bin/echo -e "\e[1;36m echo "    
-    /bin/echo -e "\e[1;36m echo "    
     sudo visudo
     /bin/echo -e "\e[1;36m echo ======= END ======="
 else
