@@ -91,8 +91,14 @@ read -p "mount HS/V on /mnt/V? (Needs HS in the /etc/hosts file) [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
     /bin/echo -e "\e[1;36m echo ------- Start -------"
+    sudo mkdir -p /mnt/P
+    sudo mkdir -p /mnt/Q
     sudo mkdir -p /mnt/V
+    sudo mkdir -p /mnt/W
+    echo 'hs:/4xNVME      /mnt/P   nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
+    echo 'hs:/1TBSSD_VMs  /mnt/Q   nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
     echo 'hs:/WL_Curated  /mnt/V   nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
+    echo 'hs:/Wordlist    /mnt/W   nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
     sudo mount -a
     ls -la /mnt
     /bin/echo -e "\e[1;36m echo ======= END ======="
