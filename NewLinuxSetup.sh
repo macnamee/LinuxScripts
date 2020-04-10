@@ -34,7 +34,8 @@ if [[ $REPLY = y ]] ; then
     sudo apt install nfs-common -y
     sudo apt install tilix -y
     sudo apt install glances -y
-    echo "alias ll='ls -la'" | sudo tee -a ~/.bashrc
+    sudo apt install ssmtp -y
+    echo "alias ll='ls -lah'" | sudo tee -a ~/.bashrc
     echo "alias cls='clear'" | sudo tee -a ~/.bashrc
     /bin/echo -e "\e[1;36m echo ======= END ======="
 else
