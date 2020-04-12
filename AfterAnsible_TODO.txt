@@ -1,0 +1,6 @@
+Launch Mate Tweak -> Panel -> Select Redmond	
+Add favourite apps to the Panel
+
+sudu passwd root
+sudo passwd -u root
+
