@@ -11,8 +11,8 @@ chmod +x get_plots.sh
 chmod +x get_space.sh
 
 /bin/echo -e "\e[1;96m======================================================================\e[1;39m"
-/bin/echo -e "\e[1;96m   Getting space info. V1.01\e[1;36m"
-/bin/echo -e "\e[1;96m======================================================================\e[1;36m"
+/bin/echo -e "\e[1;96m   Getting space info. V1.01\e[1;39m"
+/bin/echo -e "\e[1;96m======================================================================\e[1;39m"
 ./get_space.sh > /mnt/P/space.txt
 
 
