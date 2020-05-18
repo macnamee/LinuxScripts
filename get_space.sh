@@ -1,5 +1,4 @@
 #!/bin/bash
-rm ttt.txt
 echo "Server Drive Total Used Avilable Percentage DriveName NrOfFiles"
 
 server=chia00
