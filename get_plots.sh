@@ -112,8 +112,31 @@ cat ttt.txt  | sed "s/^/$server/"
 
 
 
-
-
+server=chia05
+ssh $server "ls /mnt/600GB_01/Plots/*.dat" > ttt.txt
+cat ttt.txt  | sed "s/^/$server/"
+ssh $server "ls /mnt/600GB_02/Plots/*.dat" > ttt.txt
+cat ttt.txt  | sed "s/^/$server/"
+ssh $server "ls /mnt/600GB_03/Plots/*.dat" > ttt.txt
+cat ttt.txt  | sed "s/^/$server/"
+ssh $server "ls /mnt/600GB_04/Plots/*.dat" > ttt.txt
+cat ttt.txt  | sed "s/^/$server/"
+ssh $server "ls /mnt/600GB_05/Plots/*.dat" > ttt.txt
+cat ttt.txt  | sed "s/^/$server/"
+ssh $server "ls /mnt/600GB_06/Plots/*.dat" > ttt.txt
+cat ttt.txt  | sed "s/^/$server/"
+ssh $server "ls /mnt/600GB_07/Plots/*.dat" > ttt.txt
+cat ttt.txt  | sed "s/^/$server/"
+ssh $server "ls /mnt/600GB_08/Plots/*.dat" > ttt.txt
+cat ttt.txt  | sed "s/^/$server/"
+ssh $server "ls /mnt/600GB_09/Plots/*.dat" > ttt.txt
+cat ttt.txt  | sed "s/^/$server/"
+ssh $server "ls /mnt/600GB_10/Plots/*.dat" > ttt.txt
+cat ttt.txt  | sed "s/^/$server/"
+ssh $server "ls /mnt/600GB_11/Plots/*.dat" > ttt.txt
+cat ttt.txt  | sed "s/^/$server/"
+ssh $server "ls /mnt/600GB_12/Plots/*.dat" > ttt.txt
+cat ttt.txt  | sed "s/^/$server/"
 
 
 
