@@ -3,7 +3,7 @@
 rm ttt.txt
 
 echo "Server/mnt/Drive/Folder/FileName"
-server=chia-farmer
+server=chia00
 ssh $server "ls /mnt/4TB_01/Plots/*.dat" > ttt.txt
 cat ttt.txt  | sed "s/^/$server/"
 ssh $server "ls /mnt/4TB_02/Plots/*.dat" > ttt.txt
