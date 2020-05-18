@@ -1,8 +1,8 @@
 #!/bin/bash
 cd ~
 
-#rm get_plots.sh
-#rm get_space.sh
+rm get_plots.sh
+rm get_space.sh
 
 wget https://raw.githubusercontent.com/chia-dev/Scripts/master/get_plots.sh
 wget https://raw.githubusercontent.com/chia-dev/Scripts/master/get_space.sh
