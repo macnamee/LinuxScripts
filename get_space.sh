@@ -47,7 +47,7 @@ do
 done
 
 server=lxcfarmer
-drives=(zz_10TB_01 zz_10TB_02 zz_10TB_03 zz_10TB_04 zz_10TB_05 zz_10TB_06)
+drives=(zz_10TB_01 zz_10TB_02 zz_10TB_03 zz_10TB_04 zz_10TB_05 zz_10TB_06 W)
 for i in "${drives[@]}"
 do
     space=$(ssh $server "df -k /mnt/$i" | tail -n 1)
