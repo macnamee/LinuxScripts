@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 echo "Server Drive Total Used Avilable Percentage DriveName NrOfFiles"
 server=chia00
 space=$(ssh $server "df -k /mnt/4TB_01" | tail -n 1)
