@@ -13,7 +13,7 @@ chmod +x get_space.sh
 /bin/echo -e "\e[1;92m======================================================================\e[1;39m"
 /bin/echo -e "\e[1;92m   Getting space info. V1.01\e[1;39m"
 /bin/echo -e "\e[1;92m======================================================================\e[1;39m"
-#./get_space.sh > /mnt/P/space.txt
+./get_space.sh > /mnt/P/space.txt
 
 
 
@@ -22,7 +22,7 @@ chmod +x get_space.sh
 /bin/echo -e "\e[1;92m======================================================================\e[1;39m"
 /bin/echo -e "\e[1;92mGetting plot info.\e[1;39m"
 /bin/echo -e "\e[1;92m======================================================================\e[1;39m"
-#./get_plots.sh > /mnt/P/plots.txt
+./get_plots.sh > /mnt/P/plots.txt
 
 
 
