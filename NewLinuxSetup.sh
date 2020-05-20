@@ -36,6 +36,7 @@ if [[ $REPLY = y ]] ; then
     sudo apt install glances -y
     sudo apt install ssmtp -y
     sudo apt install neofetch -y
+    sudo add-apt-repository ppa:bashtop-monitor/bashtop && sudo apt update && sudo apt install bashtop -y
     echo "alias ll='ls -lah'" | sudo tee -a ~/.bashrc
     echo "alias cls='clear'" | sudo tee -a ~/.bashrc
     echo "neofetch" | sudo tee -a ~/.bashrc
@@ -66,6 +67,11 @@ echo
 /bin/echo -e "\e[1;36m echo ! It should look like this once completed:"
 /bin/echo -e "\e[1;36m echo !"
 /bin/echo -e "\e[1;36m echo !Defaults env_reset, timestamp_timeout=300"
+/bin/echo -e "\e[1;36m echo !"
+/bin/echo -e "\e[1;36m echo !"
+/bin/echo -e "\e[1;36m echo !"
+/bin/echo -e "\e[1;36m echo !  ADD THE FOLLOWING TO THE END OF THE FILE"
+/bin/echo -e "\e[1;36m echo !  ryan    ALL=(ALL)  NOPASSWD:ALL" 
 /bin/echo -e "\e[1;36m echo "
 /bin/echo -e "\e[1;36m echo "    
 /bin/echo -e "\e[1;36m echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
