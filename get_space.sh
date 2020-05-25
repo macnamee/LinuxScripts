@@ -46,6 +46,17 @@ do
     echo $server $space $files
 done
 
+server=chia06
+drives=(1200GB_RAID0 250GB_01 320GB_01_SATA 320GB_02_SATA 320GB_04 320GB_05 320GB_06 400GB_BIG 500GB_01_SATA 500GB_02_SATA 500GB_03_SATA 500GB_BIG)
+for i in "${drives[@]}"
+do
+    space=$(ssh $server "df -k /mnt/$i" | tail -n 1)
+    files=$(ssh $server "ls /mnt/$i/Plots/*.dat" | wc -l)
+    echo $server $space $files
+done
+
+
+
 server=lxcfarmer
 drives=(zz_10TB_01 zz_10TB_02 zz_10TB_03 zz_10TB_04 zz_10TB_05 zz_10TB_06 W P)
 for i in "${drives[@]}"
