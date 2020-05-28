@@ -15,6 +15,13 @@ do
     ssh $server "ls /mnt/$i/Plots/*.dat" | sed "s/^/$server/"
 done
 
+server=chia02
+drives=(600GB_01 600GB_02 600GB_03 600GB_04 600GB_05 600GB_06 600GB_07 600GB_08 600GB_09 600GB_10 600GB_11 600GB_12 600GB_13 600GB_14 600GB_15 600GB_16)
+for i in "${drives[@]}"
+do
+    ssh $server "ls /mnt/$i/Plots/*.dat" | sed "s/^/$server/"
+done
+
 server=chia03
 drives=(3000GB_01 3000GB_02 2000GB_01 2000GB_02 2000GB_03 2000GB_04 600GB_01 600GB_02 600GB_03 600GB_04 600GB_05 600GB_06 600GB_07 600GB_08 600GB_09 600GB_10)
 for i in "${drives[@]}"
