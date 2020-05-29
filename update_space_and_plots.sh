@@ -4,6 +4,7 @@ cd ~
 echo "Usage: update_space_and_plots.sh -g      to update form Github"
 echo
 if [[ $1 == "-g" ]];
+then
     rm get_plots.sh
     rm get_space.sh
 
