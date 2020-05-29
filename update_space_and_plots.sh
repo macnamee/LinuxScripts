@@ -1,9 +1,9 @@
 #!/bin/bash
 cd ~
 
-read -p "Get updated versions from Github [y/n]" -n 1 -r
+echo "Usage: update_space_and_plots.sh -g      to update form Github"
 echo
-if [[ $REPLY = y ]] ; then
+if [[ $1 == "-g" ]];
     rm get_plots.sh
     rm get_space.sh
 
