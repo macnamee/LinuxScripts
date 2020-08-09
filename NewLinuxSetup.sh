@@ -107,12 +107,14 @@ if [[ $REPLY = y ]] ; then
     sudo mkdir -p /mnt/V
     sudo mkdir -p /mnt/W
     sudo mkdir -p /mnt/HS2Temp
-    echo 'hs:/2xNVME      /mnt/P       nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    echo 'hs:/1TBSSD      /mnt/Q       nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    echo 'hs:/WL_Curated  /mnt/V       nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    echo 'hs:/Wordlist    /mnt/W       nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    echo 'hs2:/Temp       /mnt/HS2Temp nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
+    echo 'hs:/2xNVME        /mnt/P             nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
+    echo 'hs:/1TBSSD        /mnt/Q             nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
+    echo 'hs:/WL_Curated    /mnt/V             nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
+    echo 'hs:/Wordlist      /mnt/W             nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
+    echo 'hs2:/Temp         /mnt/HS2Temp       nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
+    echo 'tr:/mnt/4TB_RAID0 /mnt/TR_4TB_RAID0  nfs auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800 0 0' | sudo tee -a /etc/fstab
     sudo mount -a
+    cd /mnt && sudo chmod 777 * && sudo chown ryan * && sudo chgrp ryan *
     ls -la /mnt
     /bin/echo -e "\e[1;36m echo ======= END ======="
 else
