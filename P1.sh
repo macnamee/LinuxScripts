@@ -8,3 +8,8 @@ chia-create-plots -k 31 -i 4000 -n 10 -t /mnt/512GBNVME/T_Plots -2 /mnt/512GBNVM
 
 
 ~/send_task_complete_email.sh
+
+
+######
+#
+######
