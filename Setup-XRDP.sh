@@ -346,4 +346,9 @@ echo
 /bin/echo -e "\e[1;36m !-----------------------------------------------------------------------!\e[0m"
 echo
 
+#Fix to allow console and remote login
+sudo apt remove dbus-user-session -y
+sudo apt install dbus-x11 -y
+
+
 hostname -I
