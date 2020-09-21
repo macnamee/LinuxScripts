@@ -58,34 +58,6 @@ else
     echo "Not setting up a root account."
 fi
 
-echo
-echo
-echo
-/bin/echo -e "\e[1;36m echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-/bin/echo -e "\e[1;36m echo !"
-/bin/echo -e "\e[1;36m echo !"
-/bin/echo -e "\e[1;36m echo ! In the editor add timestamp_timeout=300 to the Default env_reset line" 
-/bin/echo -e "\e[1;36m echo ! It should look like this once completed:"
-/bin/echo -e "\e[1;36m echo !"
-/bin/echo -e "\e[1;36m echo !Defaults env_reset, timestamp_timeout=300"
-/bin/echo -e "\e[1;36m echo !"
-/bin/echo -e "\e[1;36m echo !"
-/bin/echo -e "\e[1;36m echo !"
-/bin/echo -e "\e[1;36m echo !  ADD THE FOLLOWING TO THE END OF THE FILE"
-/bin/echo -e "\e[1;36m echo !  ryan    ALL=(ALL)  NOPASSWD:ALL" 
-/bin/echo -e "\e[1;36m echo "
-/bin/echo -e "\e[1;36m echo "    
-/bin/echo -e "\e[1;36m echo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-read -p "Change the sudo timeout? [y/n]" -n 1 -r
-echo
-if [[ $REPLY = y ]] ; then
-    /bin/echo -e "\e[1;36m echo ------- Start -------"
-    sudo visudo
-    /bin/echo -e "\e[1;36m echo ======= END ======="
-else
-    echo "Not changing the sudo timeout."
-fi
-
 read -p "Add HS and TS to /etc/hosts? [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
@@ -146,22 +118,6 @@ if [[ $REPLY = y ]] ; then
 else
     echo "Not mounting HS2Temp"
 fi
-
-
-read -p "Mount TR 4TB on /mnt? [y/n]" -n 1 -r
-echo
-if [[ $REPLY = y ]] ; then
-    /bin/echo -e "\e[1;36m echo ------- Start -------"
-    sudo mkdir -p /mnt/TR_4TB_RAID0
-    echo 'tr:/mnt/4TB_RAID0 /mnt/TR_4TB_RAID0  nfs auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800 0 0' | sudo tee -a /etc/fstab
-    sudo mount -a
-    cd /mnt && sudo chmod 777 * && sudo chown ryan * && sudo chgrp ryan *
-    ls -la /mnt
-    /bin/echo -e "\e[1;36m echo ======= END ======="
-else
-    echo "Not mounting TR"
-fi
-
 
 hostname -I
 /bin/echo -e "\e[1;36m echo ======= DONE ======="
