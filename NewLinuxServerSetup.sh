@@ -38,6 +38,8 @@ if [[ $REPLY = y ]] ; then
     echo "alias ll='ls -lah'" | sudo tee -a ~/.bashrc
     echo "alias cls='clear'" | sudo tee -a ~/.bashrc
     echo "neofetch" | sudo tee -a ~/.bashrc
+    echo 'root:macnamee2@gmail.com:smtp.gmail.com:587' | sudo tee -a /etc/ssmtp/revaliases
+    echo 'ryan:macnamee2@gmail.com:smtp.gmail.com:587' | sudo tee -a /etc/ssmtp/revaliases
     /bin/echo -e "\e[1;36m echo ======= END ======="
 else
     echo "Not installing common tools."
