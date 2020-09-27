@@ -34,6 +34,8 @@ if [[ $REPLY = y ]] ; then
     sudo apt install glances -y
     sudo apt install ssmtp -y
     sudo apt install neofetch -y
+    sudo apt install gnome-disk-utility -y
+
     sudo add-apt-repository ppa:bashtop-monitor/bashtop && sudo apt update && sudo apt install bashtop -y
     echo "alias ll='ls -lah'" | sudo tee -a ~/.bashrc
     echo "alias cls='clear'" | sudo tee -a ~/.bashrc
