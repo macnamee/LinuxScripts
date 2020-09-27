@@ -35,6 +35,7 @@ if [[ $REPLY = y ]] ; then
     sudo apt install ssmtp -y
     sudo apt install neofetch -y
     sudo apt install gnome-disk-utility -y
+    sudo apt install iperf3 -y
 
     sudo add-apt-repository ppa:bashtop-monitor/bashtop && sudo apt update && sudo apt install bashtop -y
     echo "alias ll='ls -lah'" | sudo tee -a ~/.bashrc
