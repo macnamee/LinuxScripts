@@ -76,7 +76,7 @@ else
     echo "Not updating /etc/hosts."
 fi
 
-read -p "Mount PQVW and zz Drives from HS on /mnt? [y/n]" -n 1 -r
+read -p "Mount PQVW Drives from HS on /mnt? [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
     /bin/echo -e "\e[1;36m echo ------- Start -------"
@@ -84,24 +84,12 @@ if [[ $REPLY = y ]] ; then
     sudo mkdir -p /mnt/Q
     sudo mkdir -p /mnt/V
     sudo mkdir -p /mnt/W
-    sudo mkdir -p /mnt/zz_10TB_01
-    sudo mkdir -p /mnt/zz_10TB_02
-    sudo mkdir -p /mnt/zz_10TB_03
-    sudo mkdir -p /mnt/zz_10TB_04
-    sudo mkdir -p /mnt/zz_10TB_05
-    sudo mkdir -p /mnt/zz_10TB_06
     
     echo 'hs:/2xNVME        /mnt/P             nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
     echo 'hs:/1TBSSD        /mnt/Q             nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
     echo 'hs:/WL_Curated    /mnt/V             nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
     echo 'hs:/Wordlist      /mnt/W             nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    echo 'hs:/zz_10TB_01    /mnt/zz_10TB_01    nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    echo 'hs:/zz_10TB_02    /mnt/zz_10TB_02    nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    echo 'hs:/zz_10TB_03    /mnt/zz_10TB_03    nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    echo 'hs:/zz_10TB_04    /mnt/zz_10TB_04    nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    echo 'hs:/zz_10TB_05    /mnt/zz_10TB_05    nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    echo 'hs:/zz_10TB_06    /mnt/zz_10TB_06    nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab    
-
+    
     sudo mount -a
     cd /mnt && sudo chmod 777 * && sudo chown ryan * && sudo chgrp ryan *
     ls -la /mnt
