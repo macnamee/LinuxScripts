@@ -31,7 +31,7 @@ if [[ $REPLY = y ]] ; then
     sudo apt install htop -y
     sudo apt install nfs-common -y
     sudo apt install tilix -y
-    sudo apt install glances -y
+    #sudo apt install glances -y
     sudo apt install ssmtp -y
     sudo apt install neofetch -y
     sudo apt install gnome-disk-utility -y
