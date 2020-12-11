@@ -68,7 +68,6 @@ read -p "Add HS and TS to /etc/hosts? [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
     /bin/echo -e "\e[1;36m echo ------- Start -------"
-    echo '192.168.1.20    tr' | sudo tee -a /etc/hosts
     echo '192.168.1.90    hs' | sudo tee -a /etc/hosts
     echo '192.168.1.91    hs2' | sudo tee -a /etc/hosts
     /bin/echo -e "\e[1;36m echo ======= END ======="
@@ -98,33 +97,18 @@ else
     echo "Not mounting PQVW and zz Drives from HS"
 fi
 
-read -p "Mount HSXfer on /mnt? [y/n]" -n 1 -r
+read -p "Mount HS_4TB on /mnt? [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
     /bin/echo -e "\e[1;36m echo ------- Start -------"
-    sudo mkdir -p /mnt/HSXfer
-    echo 'hs:/Xfer         /mnt/HSXfer       nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
+    sudo mkdir -p /mnt/HS_4TB
+    echo 'hs:/Temp         /mnt/HS_4TB       nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
     sudo mount -a
     cd /mnt && sudo chmod 777 * && sudo chown ryan * && sudo chgrp ryan *
     ls -la /mnt
     /bin/echo -e "\e[1;36m echo ======= END ======="
 else
     echo "Not mounting HSXfer"
-fi
-
-
-read -p "Mount HS2/Temp on /mnt? [y/n]" -n 1 -r
-echo
-if [[ $REPLY = y ]] ; then
-    /bin/echo -e "\e[1;36m echo ------- Start -------"
-    sudo mkdir -p /mnt/HS2Temp
-    echo 'hs2:/Temp         /mnt/HS2Temp       nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    sudo mount -a
-    cd /mnt && sudo chmod 777 * && sudo chown ryan * && sudo chgrp ryan *
-    ls -la /mnt
-    /bin/echo -e "\e[1;36m echo ======= END ======="
-else
-    echo "Not mounting HS2Temp"
 fi
 
 hostname -I
