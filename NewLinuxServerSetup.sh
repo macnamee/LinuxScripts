@@ -5,6 +5,7 @@ echo
 if [[ $REPLY = y ]] ; then
     sudo apt update
     sudo apt upgrade -y
+    sudo apt autoremove -y
 else
     echo "Not doing update && upgrade this time."
 fi
@@ -65,7 +66,6 @@ read -p "Add HS and TS to /etc/hosts? [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
     /bin/echo -e "\e[1;36m echo ------- Start -------"
-    echo '192.168.1.20    tr' | sudo tee -a /etc/hosts
     echo '192.168.1.90    hs' | sudo tee -a /etc/hosts
     /bin/echo -e "\e[1;36m echo ======= END ======="
 else
@@ -73,18 +73,15 @@ else
 fi
 
 
-read -p "mount HS/V on /mnt/V? (Needs HS in the /etc/hosts file) [y/n]" -n 1 -r
+read -p "mount HS drive (Needs HS in the /etc/hosts file) [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
     /bin/echo -e "\e[1;36m echo ------- Start -------"
-    sudo mkdir -p /mnt/P
-    sudo mkdir -p /mnt/Q
-    sudo mkdir -p /mnt/V
-    sudo mkdir -p /mnt/W
-    echo 'hs:/2xNVME      /mnt/P   nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    echo 'hs:/1TBSSD      /mnt/Q   nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    echo 'hs:/WL_Curated  /mnt/V   nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    echo 'hs:/Wordlist    /mnt/W   nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
+    sudo mkdir -p /mnt/chia
+    sudo mkdir -p /mnt/HS_4TB
+    
+    echo 'hs:/chia         /mnt/chia         nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
+    echo 'hs:/Temp         /mnt/HS_4TB       nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab    
     sudo mount -a
     ls -la /mnt
     /bin/echo -e "\e[1;36m echo ======= END ======="
