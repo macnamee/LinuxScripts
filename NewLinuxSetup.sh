@@ -7,6 +7,7 @@ echo
 if [[ $REPLY = y ]] ; then
     sudo apt update
     sudo apt upgrade -y
+    sudo apt autoremove -y
 else
     echo "Not doing update && upgrade this time."
 fi
@@ -64,51 +65,31 @@ else
     echo "Not setting up a root account."
 fi
 
-read -p "Add HS and TS to /etc/hosts? [y/n]" -n 1 -r
+read -p "Add HS to /etc/hosts? [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
     /bin/echo -e "\e[1;36m echo ------- Start -------"
     echo '192.168.1.90    hs' | sudo tee -a /etc/hosts
-    echo '192.168.1.91    hs2' | sudo tee -a /etc/hosts
     /bin/echo -e "\e[1;36m echo ======= END ======="
 else
     echo "Not updating /etc/hosts."
 fi
 
-read -p "Mount PQVW Drives from HS on /mnt? [y/n]" -n 1 -r
+read -p "Mount from HS on /mnt? [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
     /bin/echo -e "\e[1;36m echo ------- Start -------"
-    sudo mkdir -p /mnt/P
-    sudo mkdir -p /mnt/Q
-    sudo mkdir -p /mnt/V
-    sudo mkdir -p /mnt/W
+    sudo mkdir -p /mnt/chia
+    sudo mkdir -p /mnt/HS_4TB
     
-    echo 'hs:/2xNVME        /mnt/P             nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    echo 'hs:/1TBSSD        /mnt/Q             nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    echo 'hs:/WL_Curated    /mnt/V             nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    echo 'hs:/Wordlist      /mnt/W             nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    
+    echo 'hs:/chia         /mnt/chia         nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
+    echo 'hs:/Temp         /mnt/HS_4TB       nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab    
     sudo mount -a
     cd /mnt && sudo chmod 777 * && sudo chown ryan * && sudo chgrp ryan *
     ls -la /mnt
     /bin/echo -e "\e[1;36m echo ======= END ======="
 else
     echo "Not mounting PQVW and zz Drives from HS"
-fi
-
-read -p "Mount HS_4TB on /mnt? [y/n]" -n 1 -r
-echo
-if [[ $REPLY = y ]] ; then
-    /bin/echo -e "\e[1;36m echo ------- Start -------"
-    sudo mkdir -p /mnt/HS_4TB
-    echo 'hs:/Temp         /mnt/HS_4TB       nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    sudo mount -a
-    cd /mnt && sudo chmod 777 * && sudo chown ryan * && sudo chgrp ryan *
-    ls -la /mnt
-    /bin/echo -e "\e[1;36m echo ======= END ======="
-else
-    echo "Not mounting HSXfer"
 fi
 
 hostname -I
