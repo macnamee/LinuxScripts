@@ -94,7 +94,7 @@ if [[ $REPLY = y ]] ; then
     #echo 'hs2:/Temp          /mnt/HS2_Temp     nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab    
     #echo 'hs3:/Temp          /mnt/HS3_Temp     nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab    
     #echo 'pro:/mnt/4TB_RAID0 /mnt/PRO_Temp     nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab    
-    echo 'i5:/Temp          /mnt/i5_Temp     nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab    
+    echo 'i5:/mnt/Temp          /mnt/i5_Temp     nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab    
     sudo mount -a
     cd /mnt && sudo chmod 777 * && sudo chown ryan * && sudo chgrp ryan *
     ls -la /mnt
