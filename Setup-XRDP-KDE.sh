@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #https://askubuntu.com/questions/1237288/20-04-xrdp-kde-plasma-connect-issue
 
 
