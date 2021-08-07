@@ -38,7 +38,6 @@ if [[ $REPLY = y ]] ; then
     sudo apt install ssmtp -y
     sudo apt install neofetch -y
     sudo apt install zim -y
-    sudo apt install gnome-disk-utility -y
     sudo apt install iperf3 -y
     sudo apt install hardinfo -y
     
@@ -58,6 +57,22 @@ if [[ $REPLY = y ]] ; then
 else
     echo "Not installing common tools."
 fi
+
+
+
+read -p "Install Gnome-Disk-Utility [y/n]" -n 1 -r
+echo
+if [[ $REPLY = y ]] ; then
+    /bin/echo -e "\e[1;36m echo ------- Start -------"
+    sudo apt install gnome-disk-utility -y
+    /bin/echo -e "\e[1;36m echo ======= END ======="
+else
+    echo "Not installing Gnome-Disk-Utility."
+fi
+
+
+
+
 
 
 read -p "Enable and set a password for root? [y/n]" -n 1 -r
