@@ -40,6 +40,13 @@ if [[ $REPLY = y ]] ; then
     sudo apt install zim -y
     sudo apt install iperf3 -y
     sudo apt install hardinfo -y
+    sudo apt install ranger -y
+    
+    ##Ranger Setup
+    ranger --copy-config=all
+    git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+    echo "default_linemode devicons" >> $HOME/.config/ranger/rc.conf
+    sudo cp -r /chia/Fonts/CaskaydiaCove /usr/local/share/fonts/CaskaydiaCove    
     
     #sudo add-apt-repository ppa:bashtop-monitor/bashtop && sudo apt update && sudo apt install bashtop -y
     echo "alias ll='ls -lah'" | sudo tee -a ~/.bashrc
