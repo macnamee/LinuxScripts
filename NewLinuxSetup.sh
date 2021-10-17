@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#002
-
 read -p "Do apt update && apt upgrade [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
@@ -24,6 +22,7 @@ if [[ $REPLY = y ]] ; then
 else
     echo "Not installing OpenSSH Server."
 fi
+
 
 read -p "Install common tools: NetTools, VIM, HTOP and NFS-Common [y/n]" -n 1 -r
 echo
@@ -77,11 +76,6 @@ else
     echo "Not installing Gnome-Disk-Utility."
 fi
 
-
-
-
-
-
 read -p "Enable and set a password for root? [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
@@ -98,26 +92,36 @@ echo
 if [[ $REPLY = y ]] ; then
     /bin/echo -e "\e[1;36m echo ------- Start -------"
     echo '192.168.1.90    hs' | sudo tee -a /etc/hosts
-    echo '192.168.1.246   fullnode' | sudo tee -a /etc/hosts
     /bin/echo -e "\e[1;36m echo ======= END ======="
 else
     echo "Not updating /etc/hosts."
 fi
 
-read -p "Mount from HS on /mnt? [y/n]" -n 1 -r
+read -p "Mount Chia from HS on /chia? [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
     /bin/echo -e "\e[1;36m echo ------- Start -------"
-    sudo mkdir -p /mnt/chia
-        
+    sudo mkdir -p /chia
     echo 'hs:/chia            /chia         nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
     sudo mount -a
-    cd /mnt && sudo chmod 777 * && sudo chown ryan * && sudo chgrp ryan *
-    ls -la /mnt
     /bin/echo -e "\e[1;36m echo ======= END ======="
 else
-    echo "Not mounting PQVW and zz Drives from HS"
+    echo "Not mounting Chia from HS"
 fi
+
+
+read -p "Mount Dev from HS on /Dev? [y/n]" -n 1 -r
+echo
+if [[ $REPLY = y ]] ; then
+    /bin/echo -e "\e[1;36m echo ------- Start -------"
+    sudo mkdir -p /Dev
+    echo 'hs:/Dev             /Dev          nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab    
+    sudo mount -a
+    /bin/echo -e "\e[1;36m echo ======= END ======="
+else
+    echo "Not mounting Dev and from HS"
+fi
+
 
 hostname -I
 /bin/echo -e "\e[1;36m echo ======= DONE ======="
