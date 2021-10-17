@@ -132,5 +132,14 @@ else
     echo "Not setting up Ranger and No fonts copied"
 fi
 
+
+/bin/echo -e "\e[1;36m echo ======================================="
+/bin/echo -e "\e[1;36m echo === Apps to use                     ==="
+/bin/echo -e "\e[1;36m echo ======================================="
+
+/bin/echo -e "\e[1;36m echo glances"
+/bin/echo -e "\e[1;36m echo hardinfo -y"
+/bin/echo -e "\e[1;36m echo ranger"
+
 hostname -I
 /bin/echo -e "\e[1;36m echo ======= DONE ======="
