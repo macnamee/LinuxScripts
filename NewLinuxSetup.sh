@@ -44,6 +44,8 @@ if [[ $REPLY = y ]] ; then
     #sudo add-apt-repository ppa:bashtop-monitor/bashtop && sudo apt update && sudo apt install bashtop -y
     echo "alias ll='ls -lah'" | sudo tee -a ~/.bashrc
     echo "alias cls='clear'" | sudo tee -a ~/.bashrc
+    echo "alias upup='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y'" | sudo tee -a ~/.bashrc
+    echo "alias install='sudo apt install'" | sudo tee -a ~/.bashrc    
     echo "neofetch" | sudo tee -a ~/.bashrc
     echo 'root:macnamee2@gmail.com:smtp.gmail.com:587' | sudo tee -a /etc/ssmtp/revaliases
     echo 'ryan:macnamee2@gmail.com:smtp.gmail.com:587' | sudo tee -a /etc/ssmtp/revaliases
