@@ -40,13 +40,7 @@ if [[ $REPLY = y ]] ; then
     sudo apt install iperf3 -y
     sudo apt install hardinfo -y
     sudo apt install ranger -y
-    
-    ##Ranger Setup
-    ranger --copy-config=all
-    git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
-    echo "default_linemode devicons" >> $HOME/.config/ranger/rc.conf
-    sudo cp -r /chia/Fonts/CaskaydiaCove /usr/local/share/fonts/CaskaydiaCove    
-    
+   
     #sudo add-apt-repository ppa:bashtop-monitor/bashtop && sudo apt update && sudo apt install bashtop -y
     echo "alias ll='ls -lah'" | sudo tee -a ~/.bashrc
     echo "alias cls='clear'" | sudo tee -a ~/.bashrc
@@ -122,6 +116,21 @@ else
     echo "Not mounting Dev and from HS"
 fi
 
+
+read -p "Setup Ranger and Copy Nerd Fonts? [y/n]" -n 1 -r
+echo
+if [[ $REPLY = y ]] ; then
+    /bin/echo -e "\e[1;36m echo ------- Start -------"
+    ##Ranger Setup
+    ranger --copy-config=all
+    git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+    echo "default_linemode devicons" >> $HOME/.config/ranger/rc.conf
+    sudo mkdir -p /usr/local/share/fonts/CaskaydiaCove
+    sudo cp -r /Dev/Fonts/* /usr/local/share/fonts/CaskaydiaCove/
+    /bin/echo -e "\e[1;36m echo ======= END ======="
+else
+    echo "Not setting up Ranger and No fonts copied"
+fi
 
 hostname -I
 /bin/echo -e "\e[1;36m echo ======= DONE ======="
