@@ -120,6 +120,18 @@ else
     echo "Not mounting Dev and from HS"
 fi
 
+read -p "Mount Temp from HS on /Temp? [y/n]" -n 1 -r
+echo
+if [[ $REPLY = y ]] ; then
+    /bin/echo -e "\e[1;36m echo ------- Start -------"
+    sudo mkdir -p /Temp
+    echo 'hs:/Temp             /Temp          nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
+    sudo mount -a
+    /bin/echo -e "\e[1;36m echo ======= END ======="
+else
+    echo "Not mounting Temp from HS"
+fi
+
 
 read -p "Setup Ranger and Copy Nerd Fonts? [y/n]" -n 1 -r
 echo
