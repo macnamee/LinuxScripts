@@ -40,6 +40,8 @@ if [[ $REPLY = y ]] ; then
     sudo apt install iperf3 -y
     sudo apt install hardinfo -y
     sudo apt install ranger -y
+    sudo apt install duf -y
+    sudo apt install mc -y
    
     #sudo add-apt-repository ppa:bashtop-monitor/bashtop && sudo apt update && sudo apt install bashtop -y
     echo "alias ll='ls -lah'" | sudo tee -a ~/.bashrc
