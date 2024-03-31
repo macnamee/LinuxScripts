@@ -6,8 +6,11 @@ if [[ $REPLY = y ]] ; then
     sudo apt update
     sudo apt upgrade -y
     sudo apt autoremove -y
+    sudo apt install vim -y    
 else
-    echo "Not doing update && upgrade this time."
+    echo "Not doing upgrade this time. Installing VIM!!"
+    sudo apt update
+    sudo apt install vim -y    
 fi
 /bin/echo -e "\e[1;36m "
 /bin/echo -e "\e[1;36m ======= END ======="
@@ -24,12 +27,21 @@ else
 fi
 
 
+read -p "Add       ryan   ALL=(ALL) NOPASSWD:ALL       to visudo [y/n]" -n 1 -r
+echo
+if [[ $REPLY = y ]] ; then
+    /bin/echo -e "\e[1;36m echo ------- Start -------"
+    sudo visudo
+    /bin/echo -e "\e[1;36m echo ======= END ======="
+else
+    echo "Not updating visudo."
+fi
+
 read -p "Install common tools: NetTools, VIM, HTOP and NFS-Common [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
     /bin/echo -e "\e[1;36m echo ------- Start -------"
     sudo apt install net-tools -y
-    sudo apt install vim -y
     sudo apt install htop -y
     sudo apt install nfs-common -y
     sudo apt install tilix -y
