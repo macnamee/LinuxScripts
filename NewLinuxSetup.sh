@@ -96,19 +96,6 @@ else
     echo "Not updating /etc/hosts."
 fi
 
-read -p "Mount Chia from HS on /chia? [y/n]" -n 1 -r
-echo
-if [[ $REPLY = y ]] ; then
-    /bin/echo -e "\e[1;36m echo ------- Start -------"
-    sudo mkdir -p /chia
-    echo 'hs:/chia            /chia         nfs auto,nofail,noatime,nolock,intr,tcp,actimeo=1' | sudo tee -a /etc/fstab
-    sudo mount -a
-    /bin/echo -e "\e[1;36m echo ======= END ======="
-else
-    echo "Not mounting Chia from HS"
-fi
-
-
 read -p "Mount Dev from HS on /Dev? [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
