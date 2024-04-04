@@ -148,6 +148,12 @@ else
     echo "Not setting up Ranger and No fonts copied"
 fi
 
+neofetch
+sed -i '/# info "Local IP" local_ip/ s/# //'  ~/.config/neofetch/config.conf
+sed -i '/# info "Public IP" public_ip/ s/# //'  ~/.config/neofetch/config.conf
+
+
+
 
 /bin/echo -e "\e[1;36m echo ======================================="
 /bin/echo -e "\e[1;36m echo === Apps to use                     ==="
