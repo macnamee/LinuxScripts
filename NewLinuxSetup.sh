@@ -55,6 +55,7 @@ if [[ $REPLY = y ]] ; then
     sudo apt install duf -y
     sudo apt install mc -y
     sudo apt install curl -y
+    sudo apt install bpytop -y
    
     #sudo add-apt-repository ppa:bashtop-monitor/bashtop && sudo apt update && sudo apt install bashtop -y
     echo "alias ll='ls -lah'" | sudo tee -a ~/.bashrc
