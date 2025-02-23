@@ -53,6 +53,7 @@ if [[ $REPLY = y ]] ; then
     sudo apt install btop -y
    
     #sudo add-apt-repository ppa:bashtop-monitor/bashtop && sudo apt update && sudo apt install bashtop -y
+    cd ~
     echo "alias ll='ls -lah'" | sudo tee -a ~/.bashrc
     echo "alias cls='clear'" | sudo tee -a ~/.bashrc
     echo "neofetch" | sudo tee -a ~/.bashrc
@@ -94,7 +95,7 @@ echo
 if [[ $REPLY = y ]] ; then
     /bin/echo -e "\e[1;36m echo ------- Start -------"
     echo '#!/bin/bash' | tee -a ~/mount-temp.s.sh
-    echo 'mkdir -p /mnt/temp' | tee -a ~/mount-temp.s.sh
+    echo 'sudo mkdir -p /mnt/temp' | tee -a ~/mount-temp.s.sh
     echo 'mount -t nfs -o noatime,nolock,intr,tcp,actimeo=1 hs:/Volume1/Temp /mnt/temp' | tee -a ~/mount-temp.s.sh
     chmod +x ~/mount-temp.s.sh
     /bin/echo -e "\e[1;36m echo ======= END ======="
