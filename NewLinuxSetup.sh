@@ -94,7 +94,7 @@ read -p "Create shell script to mount Temp from HS on /mnt/temp? [y/n]" -n 1 -r
 echo
 if [[ $REPLY = y ]] ; then
     /bin/echo -e "\e[1;36m echo ------- Start -------"
-    echo '#!/bin/bash' | tee -a ~/mount-temp.s.sh
+    echo '#!/bin/bash' | tee -a ~/mount-temp.sh
     echo 'sudo mkdir -p /mnt/temp' | tee -a ~/mount-temp.s.sh
     echo 'mount -t nfs -o noatime,nolock,intr,tcp,actimeo=1 hs:/Volume1/Temp /mnt/temp' | tee -a ~/mount-temp.s.sh
     chmod +x ~/mount-temp.s.sh
