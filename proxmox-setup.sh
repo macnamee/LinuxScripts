@@ -10,7 +10,7 @@ bash -c "$(wget -qLO - https://github.com/community-scripts/ProxmoxVE/raw/main/m
 
 
 apt update
-apt install vim htop neofetch iperf3  duf hdparm bpytop mc -y
+apt install vim htop neofetch iperf3  duf hdparm btop mc -y
 
 
 
