@@ -1,6 +1,8 @@
 #!/bin/bash
 
 
+cloudflared.exe service install eyJhIjoiMjgzNjVlYmVjOTc4YzU4NTYwZTk0ZDIyMjA0ZWZkZjciLCJ0IjoiZjI3ODdmODItM
+
 #PROXMOX
 
 
@@ -41,3 +43,4 @@ echo '"\e[D": backward-char' | sudo tee -a .inputrc
 
 apt update
 apt install sudo -y
+TY3Ni00M2E4LThjMGUtNjNlYzRlZjM5M2Q5IiwicyI6Ik9HTm1NekJpTnpNdE1tUXdOUzAwTVRSbExUZ3lOalV0TlRreFltTmpZVFEwTnpsaCJ9
