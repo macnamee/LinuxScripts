@@ -1,7 +1,6 @@
 #!/bin/bash
 
 
-cloudflared.exe service install eyJhIjoiMjgzNjVlYmVjOTc4YzU4NTYwZTk0ZDIyMjA0ZWZkZjciLCJ0IjoiZjI3ODdmODItM
 
 #PROXMOX
 
@@ -12,7 +11,7 @@ bash -c "$(wget -qLO - https://github.com/community-scripts/ProxmoxVE/raw/main/m
 
 
 apt update
-apt install vim htop neofetch iperf3  duf hdparm btop mc -y
+apt install curl vim htop neofetch iperf3  duf hdparm btop mc -y
 
 
 
@@ -31,7 +30,7 @@ echo '"\e[D": backward-char' | tee -a .inputrc
 
 
 sudo apt update
-sudo apt install htop neofetch iperf3 duf mc curl btop sudo -y
+sudo apt install curl htop neofetch iperf3 duf mc curl btop sudo -y
 echo "alias ll='ls -lah'" | sudo tee -a ~/.bashrc
 echo "alias cls='clear'" | sudo tee -a ~/.bashrc
 
