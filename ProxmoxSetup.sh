@@ -9,7 +9,6 @@ apt install btop -y
    
 echo "alias ll='ls -lah'" | tee -a ~/.bashrc
 echo "alias cls='clear'" | tee -a ~/.bashrc
-echo "neofetch" | tee -a ~/.bashrc
     
 echo '"\e[A": history-search-backward' | tee -a .inputrc
 echo '"\e[B": history-search-forward' | tee -a .inputrc
