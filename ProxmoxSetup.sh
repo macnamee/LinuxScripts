@@ -13,7 +13,7 @@ echo '"\e[A": history-search-backward' | tee -a .inputrc
 echo '"\e[B": history-search-forward' | tee -a .inputrc
 echo '"\e[C": forward-char' | tee -a .inputrc
 echo '"\e[D": backward-char' | tee -a .inputrc
-
+source ~/.bashrc
 
 
 
@@ -32,3 +32,4 @@ echo '"\e[A": history-search-backward' | sudo tee -a .inputrc
 echo '"\e[B": history-search-forward' | sudo tee -a .inputrc
 echo '"\e[C": forward-char' | sudo tee -a .inputrc
 echo '"\e[D": backward-char' | sudo tee -a .inputrc
+source ~/.bashrc
